@@ -23,5 +23,12 @@ public class MyArrays {
         for (Integer el : myArr2) {
             System.out.println(el);
         }
+
+        System.out.println();
+
+        for (int i=0;i<myArr2.length;i++) {
+            System.out.println("El " + i + " : " + myArr2[i]);
+        }
+
     }
 }
