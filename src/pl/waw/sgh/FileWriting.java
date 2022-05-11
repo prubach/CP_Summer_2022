@@ -9,10 +9,13 @@ public class FileWriting {
     public static void main(String[] args) throws IOException {
         String fileName = "out.txt";
         File myFile = new File(fileName);
-        FileWriter fw = new FileWriter(myFile);
+        // appending to a file
+        FileWriter fw = new FileWriter(myFile, true);
         BufferedWriter bw = new BufferedWriter(fw);
+        //BufferedWriter bw = new BufferedWriter(fw, 1024);
         bw.write("This is my header");
         bw.newLine();
+        bw.flush();
         bw.write("2nd line");
         bw.newLine();
         bw.write("3rd line");
