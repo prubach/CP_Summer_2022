@@ -1,8 +1,13 @@
 package pl.waw.sgh.obj;
 
 public class Rectangle {
-    private int sideA = 0;
-    private int sideB = 0;
+    private int sideA = 454;
+    private int sideB = 4;
+
+    public Rectangle() {
+        sideA = 100;
+        sideB = 2;
+    }
 
     public void setParams(int a, int b) {
         if (a>0 && b>0) {
