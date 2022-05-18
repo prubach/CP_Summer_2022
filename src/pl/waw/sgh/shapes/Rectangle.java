@@ -9,12 +9,4 @@ public class Rectangle extends Shape {
     public Double calcSurface() {
         return parA*parB;
     }
-
-    @Override
-    public String toString() {
-        return "Rectangle{" +
-                "parA=" + parA +
-                ", parB=" + parB +
-                '}';
-    }
 }

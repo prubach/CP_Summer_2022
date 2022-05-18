@@ -34,7 +34,7 @@ public class Shape {
 
     @Override
     public String toString() {
-        return "Shape{" +
+        return this.getClass().getSimpleName() + "{" +
                 "parA=" + parA +
                 ", parB=" + parB +
                 '}';
