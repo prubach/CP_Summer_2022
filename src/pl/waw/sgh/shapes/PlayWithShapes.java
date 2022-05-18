@@ -2,9 +2,12 @@ package pl.waw.sgh.shapes;
 
 //import pl.waw.sgh.shapes.*;
 
+import pl.waw.sgh.shapes.Rectangle;
+
 public class PlayWithShapes {
     public static void main(String[] args) {
         Rectangle r1 = new Rectangle(5.0, 4.0);
+        r1.parB = 30.7;
         System.out.println(r1);
         Rectangle r2 = new Rectangle(5.0, 4.0);
         //boolean is_r1_eq_r2 = r1 == r2;
