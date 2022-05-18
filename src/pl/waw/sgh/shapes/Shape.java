@@ -2,7 +2,7 @@ package pl.waw.sgh.shapes;
 
 import java.util.Objects;
 
-public class Shape {
+public abstract class Shape implements PerimeterCalculation {
     protected Double parA = 0.0;
     protected Double parB = 0.0;
 
@@ -18,6 +18,8 @@ public class Shape {
         this.parA = a;
         this.parB = b;
     }
+
+    public abstract Double calcSurface();
 
     @Override
     public boolean equals(Object o) {
@@ -37,6 +39,7 @@ public class Shape {
         return this.getClass().getSimpleName() + "{" +
                 "parA=" + parA +
                 ", parB=" + parB +
+                //", surface=" + calcSurface() +
                 '}';
     }
 }
