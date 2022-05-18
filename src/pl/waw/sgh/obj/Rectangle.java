@@ -1,12 +1,26 @@
 package pl.waw.sgh.obj;
 
 public class Rectangle {
-    private int sideA = 454;
+    private Integer sideA;
     private int sideB = 4;
 
+//    public Rectangle() {
+//        //sideA = 100;
+//        //sideB = 2;
+//    }
+//
     public Rectangle() {
-        sideA = 100;
-        sideB = 2;
+        this(40, 20);
+        //sideA = 100;
+        //sideB = 2;
+    }
+
+
+
+    public Rectangle(Integer sideA, int sideB) {
+        setParams(sideA, sideB);
+        //this.sideA = sideA;
+        //this.sideB = sideB;
     }
 
     public void setParams(int a, int b) {
