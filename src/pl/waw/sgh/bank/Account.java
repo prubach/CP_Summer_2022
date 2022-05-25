@@ -41,13 +41,12 @@ public class Account {
     }
 
     //TODO implement - check conditions - negative amount, not enough money to charge
-    public void charge(Double toCharge) throws NegativeAmountException {
+    public void charge(Double toCharge) throws NegativeAmountException, NotEnoughMoneyException {
         if (toCharge <= 0.0) {
             throw new NegativeAmountException("Negative amount to charge: " + toCharge);
         }
         if (toCharge > balance.doubleValue()) {
-            System.out.println("Balance is not enough to charge: " + toCharge);
-            return;
+            throw new NotEnoughMoneyException("Balance is not enough to charge: " + toCharge);
         }
         balance = balance.subtract(BigDecimal.valueOf(toCharge));
     }

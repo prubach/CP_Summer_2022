@@ -36,13 +36,13 @@ public class Bank {
     }
 
     //TODO - to implement
-    public void transfer(Account fromAccount, Account toAccount, Double amount) throws NegativeAmountException {
+    public void transfer(Account fromAccount, Account toAccount, Double amount) throws NegativeAmountException, NotEnoughMoneyException {
         fromAccount.charge(amount);
         toAccount.deposit(amount);
     }
 
     //TODO - to implement
-    public void transfer(Integer fromAccountID, Integer toAccountID, Double amount) throws NegativeAmountException {
+    public void transfer(Integer fromAccountID, Integer toAccountID, Double amount) throws NegativeAmountException, NotEnoughMoneyException {
         Account fromAccount = findAccountByID(fromAccountID);
         Account toAccount = findAccountByID(toAccountID);
         if ((fromAccount!=null) && (toAccount!=null)) {
