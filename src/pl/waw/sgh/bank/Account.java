@@ -33,14 +33,24 @@ public class Account {
 
     //TODO implement - check conditions - negative amount
     public void deposit(Double toDeposit) {
-        //BigDecimal.valueOf(toDeposit)
-        //balance.add
+        if (toDeposit > 0.0) {
+            balance = balance.add(BigDecimal.valueOf(toDeposit));
+        } else {
+            System.out.println("Negative amount to deposit");
+        }
     }
 
     //TODO implement - check conditions - negative amount, not enough money to charge
     public void charge(Double toCharge) {
-
-
+        if (toCharge <= 0.0) {
+            System.out.println("Negative amount to charge");
+            return;
+        }
+        if (toCharge > balance.doubleValue()) {
+            System.out.println("Balance is not enough to charge: " + toCharge);
+            return;
+        }
+        balance = balance.subtract(BigDecimal.valueOf(toCharge));
     }
 
     public String getCurrency() {

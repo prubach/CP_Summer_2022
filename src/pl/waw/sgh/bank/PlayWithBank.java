@@ -12,6 +12,11 @@ public class PlayWithBank {
         Account a3 = bank.newAccount(c2);
         Account a4 = bank.newAccount(c2);
         System.out.println(bank);
-
+        a1.deposit(100.0);
+        a1.deposit(20.0);
+        a1.charge(-10.0);
+        a1.charge(200.0);
+        a1.charge(50.0);
+        System.out.println(bank);
     }
 }
