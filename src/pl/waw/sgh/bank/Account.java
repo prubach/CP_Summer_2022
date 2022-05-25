@@ -53,7 +53,7 @@ public class Account {
                 "accountID=" + accountID +
                 ", balance=" + balance +
                 ", currency='" + currency + '\'' +
-                ", customer=" + customer +
+                ", customer=" + customer.getCustomerID() + "_" + customer.getLastName() +
                 '}';
     }
 }
