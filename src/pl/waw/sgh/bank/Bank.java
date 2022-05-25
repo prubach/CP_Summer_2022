@@ -37,12 +37,29 @@ public class Bank {
 
     //TODO - to implement
     public void transfer(Account fromAccount, Account toAccount, Double amount) {
-
+        fromAccount.charge(amount);
+        toAccount.deposit(amount);
     }
 
     //TODO - to implement
     public void transfer(Integer fromAccountID, Integer toAccountID, Double amount) {
+        Account fromAccount = findAccountByID(fromAccountID);
+        Account toAccount = findAccountByID(toAccountID);
+        if ((fromAccount!=null) && (toAccount!=null)) {
+            transfer(fromAccount, toAccount, amount);
+        } else {
+            System.out.println("One of the accounts not found!!!");
+        }
+    }
 
+    //TODO
+    public Account findAccountByID(Integer accID) {
+        for (Account acc : accountList) {
+            if (acc.getAccountID()==accID) {
+                return acc;
+            }
+        }
+        return null;
     }
 
 

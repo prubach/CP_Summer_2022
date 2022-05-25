@@ -18,5 +18,8 @@ public class PlayWithBank {
         a1.charge(200.0);
         a1.charge(50.0);
         System.out.println(bank);
+        bank.transfer(a1, a2, 90.0);
+        System.out.println(bank);
+
     }
 }
