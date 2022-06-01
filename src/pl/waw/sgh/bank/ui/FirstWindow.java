@@ -2,6 +2,8 @@ package pl.waw.sgh.bank.ui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class FirstWindow {
 
@@ -28,6 +30,14 @@ public class FirstWindow {
         JTextField nameField = new JTextField(60);
         mainPanel.add(nameField);
         JButton okButton = new JButton("OK");
+//        okButton.addActionListener(new OkButtonListener());
+        okButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frame, "Hello " + nameField.getText());
+            }
+        });
         mainPanel.add(okButton);
         frame.add(mainPanel);
 

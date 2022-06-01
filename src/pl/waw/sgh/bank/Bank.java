@@ -1,9 +1,10 @@
 package pl.waw.sgh.bank;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bank {
+public class Bank implements Serializable {
 
     private String name;
 
@@ -62,6 +63,45 @@ public class Bank {
         return null;
     }
 
+    public Customer findFirstCustomer() {
+        if (customerList.size()>0)
+            return customerList.get(0);
+        else
+            return null;
+    }
+
+    public Customer prevCustomer(Customer curCust) {
+        int curCustIdx = customerList.indexOf(curCust);
+        if (curCustIdx > 0) {
+            return customerList.get(curCustIdx - 1);
+        } else {
+            //customerList.size()
+            return null;
+        }
+    }
+
+    public Customer nextCustomer(Customer curCust) {
+        int curCustIdx = customerList.indexOf(curCust);
+        if (curCustIdx < customerList.size()-1) {
+            return customerList.get(curCustIdx + 1);
+        } else {
+            //customerList.size()
+            return null;
+        }
+    }
+
+    public List<Account> findAccountByCustomer(Customer cust) {
+        List<Account> acList = new ArrayList<>();
+        for (Account acc : accountList) {
+            if (acc.getCustomer()==cust)
+                acList.add(acc);
+        }
+        return acList;
+    }
+
+    public void deleteAccount(Account acc) {
+        accountList.remove(acc);
+    }
 
     @Override
     public String toString() {
